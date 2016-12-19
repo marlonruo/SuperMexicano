@@ -6,10 +6,10 @@
         id        = "SuperMexicano"
         version   = "1.0.0">
 
-    <name>Hello World</name>
+    <name>SuperMexicano</name>
 
     <description>
-        Hello World sample application that responds to the deviceready event.
+        super mexicano
     </description>
 
     <author href="http://digisign.mx" email="mruiz@digisign.mx">
