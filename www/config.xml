@@ -63,7 +63,8 @@
    
     <preference name="android-installLocation"    value="auto" />           <!-- android: app install location. 'auto' will choose. 'internalOnly' is device memory.  -->
 	
-	<preference name="StatusBarOverlaysWebView"   value="true" />
+	<preference name="StatusBarOverlaysWebView"   value="false" />
+	<preference name="StatusBarStyle" value="lightcontent" />
 	
 	
 	
