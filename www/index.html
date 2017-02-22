@@ -494,6 +494,7 @@ my nibh sed diameuismod tincidunt.</i>
 				
 				
 				$('#bt1').click(function(){
+								StatusBar.hide(); 
 								$('#perfil').css('visibility','visible')
 								$('#perfil').transition({left:'0%', rotate: '0deg'}, 0)
 								$('#perfil').css('z-index','1001')
@@ -509,6 +510,7 @@ my nibh sed diameuismod tincidunt.</i>
 				var edi=0
 				
 				$('#bt_edita').click(function(){
+								StatusBar.show(); 
 								$('#factura').css('visibility','visible')
 								$('#factura').transition({left:'130%', rotate: '20deg'}, 0)
 								$('.contenido').css('z-index','1')
@@ -708,7 +710,7 @@ my nibh sed diameuismod tincidunt.</i>
 					alert('hola')
 				} 
 				
-				StatusBar.hide(); 
+				StatusBar.show(); 
                      
 		
         </script>
