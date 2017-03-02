@@ -28,11 +28,14 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         
-        <script src="js/jquery-1.11.2.js" type="text/javascript"></script>
+        <script src="js/jquery-1.11.2.js"></script>
 		<script src="js/jquery.mobile.custom.js" type="text/javascript"></script>
         <script src="js/jquery-ui.js"></script>
-        <script src="js/ui.touch.punch.js"></script>
         <script src="js/transit.js"></script>
+        <script src="js/touch.js" type="text/javascript"></script>
+        <script src="js/swipe.js" type="text/javascript"></script>
+        <script type="text/javascript" src="js/jquery.form.js"></script>
+
 
         <title>Super Mexicano</title>
     </head>
@@ -90,87 +93,358 @@
                 <div id="registro" class="contenido" style="visibility:hidden">
                       <div class="titulos" style="top:6%;">Registro</div>
                       
-   
-                      <input type="text" class="textos" style="top:13%; padding-top:1%; padding-bottom:1%" value="Nombre:">
+   					<form name="forma_registro" id="forma_registro" method="post" action="http://dogs-life.com.mx/sm/enviar.php">
+                      <input id="nombre" name="nombre" type="text" class="textos" style="top:13%; padding-top:1%; padding-bottom:1%" value="Nombre:" onFocus="borrar1()" onBlur="checar1()" tabindex="1">
                       <div class="lineas" style="top:20%"></div>
                         
-                      <input type="text" class="textos" style="top:23%; padding-top:1%; padding-bottom:1%" value="Email:">
+                      <input id="email" name="email" type="text" class="textos" style="top:23%; padding-top:1%; padding-bottom:1%" value="Email:" onFocus="borrar2()" onBlur="checar2()" tabindex="2">
                       <div class="lineas" style="top:30%"></div>
                         
-                      <input type="text" class="textos" style="top:33%; padding-top:1%; padding-bottom:1%" value="Contraseña:">
+                      <input id="contrasena" name="contrasena" type="text" class="textos" style="top:33%; padding-top:1%; padding-bottom:1%" value="Contraseña:" onFocus="borrar3()" onBlur="checar3()" tabindex="3">
                       <div class="lineas" style="top:40%"></div>
                         
-                      <input type="text" class="textos" style="top:43%; width:26%; padding-top:1%; padding-bottom:1%" value="Genero:">
+                      <select id="genero" name="genero" class="textos" style="top:43%; width:26%; padding-top:1%; padding-bottom:1%">
+                            <option>Hombre</option>
+                            <option>Mujer</option>
+                      </select> 
+                      
+                      <script>
+                      	function borrar1(){
+							if(document.getElementById('nombre').value=='Nombre:'){
+								document.getElementById('nombre').value=''
+							}
+						}
+				
+						function checar1(){
+							if(document.getElementById('nombre').value==''){
+								document.getElementById('nombre').value='Nombre:'
+							}
+							StatusBar.hide(); 
+						}
+						
+						function borrar2(){
+							if(document.getElementById('email').value=='Email:'){
+								document.getElementById('email').value=''
+							}
+						}
+				
+						function checar2(){
+							if(document.getElementById('email').value==''){
+								document.getElementById('email').value='Email:'
+							}
+							StatusBar.hide(); 
+						}
+						
+						function borrar3(){
+							if(document.getElementById('contrasena').value=='Contraseña:'){
+								$('#contrasena').attr('type', 'password');
+								document.getElementById('contrasena').value=''
+								document.getElementById('contrasena').focus()
+							}
+						}
+				
+						function checar3(){
+							if(document.getElementById('contrasena').value==''){
+								$('#contrasena').attr('type', 'text');
+								document.getElementById('contrasena').value='Contraseña:'
+							}
+							StatusBar.hide(); 
+						}
+                      </script>
+                      
+                   
                       <div class="lineas" style="top:50%; width:26%"></div>
                         
-                      <input type="text" class="textos" style="top:43%; left:47%; width:38%; padding-top:1%; padding-bottom:1%" value="Fecha nacimiento:">
+                        
+                      <select id="nacimiento" name="nacimiento" class="textos" style="top:43%; left:47%; width:38%; padding-top:1%; padding-bottom:1%">
+                            <option>Año Nacimiento</option>
+                            <option>2010</option>
+                            <option>2009</option>
+                            <option>2008</option>
+                            <option>2007</option>
+                            <option>2006</option>
+                            <option>2005</option>
+                            <option>2004</option>
+                            <option>2003</option>
+                            <option>2002</option>
+                            <option>2001</option>
+                            <option>2000</option>
+                            <option>1999</option>
+                            <option>1998</option>
+                            <option>1997</option>
+                            <option>1996</option>
+                            <option>1999</option>
+                            <option>1998</option>
+                            <option>1997</option>
+                            <option>1996</option>
+                            <option>1995</option>
+                            <option>1994</option>
+                            <option>1993</option>
+                            <option>1992</option>
+                            <option>1991</option>
+                            <option>1990</option>
+                            <option>1989</option>
+                            <option>1988</option>
+                            <option>1987</option>
+                            <option>1986</option>
+                            <option>1985</option>
+                            <option>1984</option>
+                            <option>1983</option>
+                            <option>1982</option>
+                            <option>1981</option>
+                            <option>1980</option>
+                            <option>1979</option>
+                            <option>1978</option>
+                            <option>1977</option>
+                            <option>1976</option>
+                            <option>1975</option>
+                            <option>1974</option>
+                            <option>1973</option>
+                            <option>1972</option>
+                            <option>1971</option>
+                            <option>1970</option>
+                            <option>1969</option>
+                            <option>1968</option>
+                            <option>1967</option>
+                            <option>1966</option>
+                            <option>1965</option>
+                            <option>1964</option>
+                            <option>1963</option>
+                            <option>1962</option>
+                            <option>1961</option>
+                            <option>1960</option>
+                            <option>1959</option>
+                            <option>1958</option>
+                            <option>1957</option>
+                            <option>1956</option>
+                            <option>1955</option>
+                            <option>1954</option>
+                            <option>1953</option>
+                            <option>1952</option>
+                            <option>1951</option>
+                            <option>1950</option>
+                            <option>1949</option>
+                            <option>1948</option>
+                            <option>1947</option>
+                            <option>1946</option>
+                            <option>1945</option>
+                            <option>1944</option>
+                            <option>1943</option>
+                            <option>1942</option>
+                            <option>1941</option>
+                            <option>1940</option>
+                            <option>1939</option>
+                            <option>1938</option>
+                            <option>1937</option>
+                            <option>1936</option>
+                            <option>1935</option>
+                            <option>1934</option>
+                            <option>1933</option>
+                            <option>1932</option>
+                            <option>1931</option>
+                            <option>1930</option>
+                      </select>
+                      
                       <div class="lineas" style="top:50%; width:38%; left:47%"></div>
                         
                       <div id="bt_requiere" class="avisos" style="top:55%; left:21%; cursor:pointer">¿Requiere factura?</div>
                       <img id="bt_requiere2" src="img/cuadrito.png" style="position:absolute; top:53.5%; height:5%; left:15%; cursor:pointer"/>
-                      <img id="palomita1" src="img/palomita.png" style="position:absolute; top:53.5%; height:5%; left:15%; cursor:pointer"/>
+                      <img id="palomita1" src="img/palomita.png" style="position:absolute; top:53.5%; height:5%; left:15%; cursor:pointer; display:none"/>
                       
-                      <div class="avisos" style="top:55%; left:53%; cursor:pointer">Acepto el Aviso de Privacidad</div>
-                      <img src="img/cuadrito.png" style="position:absolute; top:53.5%; height:5%; left:47%; cursor:pointer"/> 
+                      <div id="aviso" class="avisos" style="top:55%; left:53%; cursor:pointer">Acepto el Aviso de Privacidad</div>
+                      <img id="aviso2" src="img/cuadrito.png" style="position:absolute; top:53.5%; height:5%; left:47%; cursor:pointer"/>
+                      <img id="palomita2" src="img/palomita.png" style="position:absolute; top:53.5%; height:5%; left:47%; cursor:pointer; display:none"/> 
                       
-                      <div id="registro_continuar" style="position:absolute; top:64%; width:70%; left:15%; height:8%; background:#8BC542; cursor:pointer">
-                      	  <div class="botones" style="color:#FFFFFF; top:50%">Continuar</div>
-                      </div>
+                      <script>
+					  var avi=0
+                      	$('#aviso, #aviso2, #palomita2').click(function(){
+							if(avi==0){
+								$('#palomita2').show()
+								avi=1
+							}else{
+								$('#palomita2').hide()
+								avi=0
+							}
+						})
+                      </script>
                       
-                      <div id="registro_face" style="position:absolute; top:74%; width:70%; left:15%; height:8%; background:#35518D; background-image:url(img/face.png); background-repeat:no-repeat; background-size:auto 60%; background-position:15px 40%; cursor:pointer">
+                      <input id="RFC" name="RFC" type="text" style="position:absolute; top:80%; display:none" value="0000000000000">
+                      <input id="Rfactura" name="Rfactura" type="text" style="position:absolute; top:80%; display:none" value="0">
+                      <input id="Calle" name="Calle" type="text" style="position:absolute; top:80%; display:none" value="0">
+                      <input id="NumE" name="NumE" type="text" style="position:absolute; top:80%; display:none" value="0">
+                      <input id="NumI" name="NumI" type="text" style="position:absolute; top:80%; display:none" value="0">
+                      <input id="ColCli" name="ColCli" type="text" style="position:absolute; top:80%; display:none" value="0">
+                      <input id="DelCli" name="DelCli" type="text" style="position:absolute; top:80%; display:none" value="0">
+                      <input id="CiuCli" name="CiuCli" type="text" style="position:absolute; top:80%; display:none" value="0">
+                      <input id="EdoCli" name="EdoCli" type="text" style="position:absolute; top:80%; display:none" value="0">
+                      <input id="PaisCli" name="PaisCli" type="text" style="position:absolute; top:80; display:none" value="0">
+                      <input id="CPCli" name="CPCli" type="text" style="position:absolute; top:80%; display:none" value="0">
+                      <input id="IEPS" name="IEPS" type="text" style="position:absolute; top:80%; display:none" value="0">
+                      <input id="Extranjero" name="Extranjero" type="text" style="position:absolute; top:80%; display:none" value="0">
+                  
+                      
+                      <input id="registro_continuar" class="botones" type="submit" style="position:absolute; top:68%; width:calc(70% + 4px); left:15%; height:8%; background:#8BC542; cursor:pointer; border:none; color:#fff" value="Continuar">
+                      
+                      
+                      
+                      <div id="registro_face" style="position:absolute; top:76%; width:71%; left:15%; height:8%; background:#35518D; background-image:url(img/face.png); background-repeat:no-repeat; background-size:auto 60%; background-position:15px 40%; cursor:pointer">
                       	  <div class="botones" style="color:#FFFFFF; top:50%">Inicar Sesión con Facebook</div>
                       </div>
                       
                       <div class="avisos" style="top:87%; width:100%; text-align:center">¿Ya tienes una cuenta? <span style="color:#E11D8D">Iniciar Sesión</span></div>
                       
-                     
-                </div>
-                
-                
-                <div id="clave" class="contenido" style="visibility:hidden">
-                      <div style="position:absolute; width:70%; left:15%; top:15%; height:76%; background-color:#333333">
-                      	<div class="textos" style="color:rgba(255,255,255,1.00); top:10%; text-align:center">
-                        	<i>Lorem ipsum dolor sit amet, sed diamconsectetuer adipiscing elit, sed diam nonum
-my nibh sed diameuismod tincidunt.</i>
-                        </div>
-                        
-                        
-                        	<input id="claves" type="text"  class="centrar_v" style="color:rgba(255,255,255,1.00); border:1px solid rgba(255,255,255,1.00); height:10%; top:50%; font-family:Arial; text-align:center; background:none; width:calc(70% - 2px); left:15%;" value="Clave">
-                        	
-                        
-                        
-                        <div id="registro_bien" style="position:absolute; top:62%; width:70%; left:15%; height:10%; background:#8BC542; cursor:pointer">
-                      	  <div class="botones" style="color:#FFFFFF; top:50%">Continuar</div>
-                        </div>
-                        
-                        <div class="avisos" style="top:87%; width:100%; text-align:center; color:rgba(255,255,255,1.00)">Para cambiar la contraseña, accede a “Ver/ Editar Perfil”</div>
-                      </div>
-                </div>
-                
-                
-                     <script>
-                      		$('#registro_continuar, #registro_face').click(function(){
+                      <div id="aviso1" class="avisos" style="top:61%; width:100%; text-align:center; color:#E11D8D"></div>
+                      
+                      
+                  </form> 
+                  
+                  <script>
+         $('#forma_registro').submit(function() {
+			var nombre = document.getElementById("nombre").value
+			var email = document.getElementById("email").value
+			var contrasena = document.getElementById("contrasena").value
+			
+			if(document.getElementById("nombre").value == 'Nombre:' || document.getElementById("nombre").value == ''){
+				$('#aviso1').html('* nombre requerido')
+				setTimeout("$('#aviso1').html('')", 1500)
+				return false;
+			}
+	
+			var filtro = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;	
+			if (!filtro.test(email)) {
+				$('#aviso1').html('* email incorrecto')
+				setTimeout("$('#aviso1').html('')", 1500)
+			   return false;
+			}
+	
+			if(document.getElementById("contrasena").value == 'Contraseña:' || document.getElementById("contrasena").value == ''){
+				$('#aviso1').html('* Contraseña incorrecta')
+				setTimeout("$('#aviso1').html('')", 1500)
+				return false;
+			}
+			
+			if($("#contrasena").val().length < 8){
+				$('#aviso1').html('* Contraseña debe tener mas de 8 caracteres')
+				setTimeout("$('#aviso1').html('')", 1500)
+				return false;
+			}
+			
+
+			if(document.getElementById("nacimiento").value=="Año Nacimiento"){
+				$('#aviso1').html('* Elige tu año de nacimiento')
+				setTimeout("$('#aviso1').html('')", 1500)
+				return false;
+			}
+			
+			if(avi==0){
+				$('#aviso1').html('* Debes aceptar el Aviso de Privacidad')
+				setTimeout("$('#aviso1').html('')", 1500)
+				return false;
+			}
+			
+		
+			$.ajax({
+				type: 'POST',
+				url: $(this).attr('action'),
+				data: $(this).serialize(),
+				success: function(data) {
+								localStorage.setItem("nombre", nombre);
+								localStorage.setItem("email", email);
+								localStorage.setItem("contrasena", contrasena);
+								localStorage.setItem("genero", document.getElementById("genero").value);
+								localStorage.setItem("anio", document.getElementById("nacimiento").value);
+					
+					   			//alert(data)
+								localStorage.setItem("codigo", data);
 								$('#clave').css('visibility','visible')
 								$('#clave').transition({left:'130%', rotate: '20deg'}, 0)
 								$('#clave').animate({left:'0%', rotate: '0deg'}, 1000)
 								$('.contenido').css('z-index','0')
 								$('#registro').css('z-index','1')
 								$('#clave').css('z-index','2')
-							})
-							
-							$('#registro_bien').click(function(){
-								$('#codigo').css('visibility','visible')
-								$('#codigo').transition({left:'130%', rotate: '20deg'}, 0)
-								$('#codigo').animate({left:'0%', rotate: '0deg'}, 1000)
-								$('.contenido').css('z-index','0')
-								$('#clave').css('z-index','1')
-								$('#codigo').css('z-index','2')
-								$('#bt_menu').fadeIn()
-								//$('#bt_atras').fadeIn()
-								$('#bt_alerta').fadeIn()
-								$('#bt_alerta').css('right', '3%')
-							})
-                      </script>
+								$('#enviar_codigo').load('http://dogs-life.com.mx/sm/enviar_correo.php?codigo='+data+'&email='+email) 
+				}
+			})
+			return false;
+        }); 
+		
+                  </script>
+                    
+                </div>
+                
+                
+                <div id="enviar_codigo" style="font-size:1px; color:rgba(255,255,255,1.00); height:0px;"></div>
+                
+                
+                <div id="clave" class="contenido" style="visibility:hidden">
+                      <div style="position:absolute; width:70%; left:15%; top:15%; height:76%; background-color:#333333">
+                      	<div class="textos" style="color:rgba(255,255,255,1.00); top:10%; text-align:center">
+                        	<i>Se envio un correo<br>con tu <b>Clave</b><br>escribela aqui para continuar<br><br>* checa tu bandeja de correo<br>no deseado</i>
+                        </div>
+                        
+                        	<form name="forma_codigo" id="forma_codigo" method="put">
+                        	<input id="claves" name="claves" type="text"  class="centrar_v" style="color:rgba(255,255,255,1.00); border:1px solid rgba(255,255,255,1.00); height:10%; top:50%; font-family:Arial; text-align:center; background:none; width:calc(70% - 2px); left:15%;" value="Clave" onFocus="borrar1_cl()" onBlur="checar1_cl()" >
+                              
+                        <script>
+                      	function borrar1_cl(){
+							if(document.getElementById('claves').value=='Clave'){
+								document.getElementById('claves').value=''
+							}
+						}
+				
+						function checar1_cl(){
+							if(document.getElementById('claves').value==''){
+								document.getElementById('claves').value='Clave'
+							}
+							StatusBar.hide(); 
+						}
+                        	
+                        </script>
+                        
+                        <input type="submit" class="botones" style="position:absolute; top:62%; width:calc(70% + 4px); color:#FFFFFF; left:15%; height:10%; background:#8BC542; cursor:pointer; border:none" value="Continuar">
+                        
+                        <div id="aviso3" class="avisos" style="top:75%; width:100%; text-align:center; color:#fff"></div>
+
+                        </form>
+                        
+                        
+                        <script>
+		 $('#forma_codigo').submit(function() {
+			var clave = document.getElementById("claves").value
+			var clave2 = localStorage.getItem("codigo");
+			
+			if(clave == 'Clave' || clave == ''){
+				$('#aviso3').html('* clave requerida')
+				setTimeout("$('#aviso3').html('')", 1500)
+				return false;
+			}
+			
+			
+			if(clave == clave2){
+				$('#aviso3').html('* ¡Bien! Espera un momento')
+				setTimeout("$('#aviso3').html('')", 1500)
+				$('#codigo').css('visibility','visible')
+				$('#codigo').transition({left:'130%', rotate: '20deg'}, 0)
+				$('#codigo').animate({left:'0%', rotate: '0deg'}, 1000)
+				$('.contenido').css('z-index','0')
+				$('#clave').css('z-index','1')
+				$('#codigo').css('z-index','2')
+				$('#bt_menu').fadeIn()
+				//$('#bt_atras').fadeIn()
+				$('#bt_alerta').fadeIn()
+				$('#bt_alerta').css('right', '3%')
+			}else{
+				$('#aviso3').html('* clave incorrecta')
+				setTimeout("$('#aviso3').html('')", 1500)
+			}
+			return false;
+        }); 
+                     
+						</script>
+                        
+                        <div class="avisos" style="top:87%; width:100%; text-align:center; color:rgba(255,255,255,1.00)">Para cambiar la contraseña, accede a “Ver/ Editar Perfil”</div>
+                      </div>
+                </div>
                 
                 
                 <div id="codigo" class="contenido" style="visibility:hidden">
@@ -249,24 +523,78 @@ my nibh sed diameuismod tincidunt.</i>
               <div id="promociones" class="contenido" style="visibility:hidden">
                 <div class="titulos" style="top:6%;">Promociones</div>
                   
-                <img src="img/promo.jpg" class="centrar" style="width:85%;"/>
+                <img id="pr1" src="img/promo.jpg" class="centrar" style="width:85%;"/>
+                <img id="pr2" src="img/promo.jpg" class="centrar" style="width:85%; margin-left:100%"/>
+                <img id="pr3" src="img/promo.jpg" class="centrar" style="width:85%; margin-left:100%"/>
                 
-                <img src="img/bolita.png" class="centrar_h" style="top:85%; height:3%"/> 
-                <img src="img/bolita2.png" class="centrar_h" style="top:85%; height:3%; margin-left:-40px;"/> 
-                <img src="img/bolita.png" class="centrar_h" style="top:85%; height:3%; margin-left:40px;"/> 
+               
+                <img id="bo1" src="img/bolita2.png" class="centrar_h" style="top:85%; height:3%; margin-left:-40px;"/> 
+                <img id="bo2" src="img/bolita.png" class="centrar_h" style="top:85%; height:3%"/> 
+                <img id="bo3" src="img/bolita.png" class="centrar_h" style="top:85%; height:3%; margin-left:40px;"/> 
                 
-                
+                <script>
+				var pro=1
+                	$("#pr1").swipe(function(donde) {
+						if(donde=='left'){
+							$('#pr1').animate({marginLeft:'-100%'}, 800)
+							$('#pr2').animate({marginLeft:'100%'}, 0)
+							$('#pr2').animate({marginLeft:'0%'}, 800)
+							$("#bo1").attr("src","img/bolita.png");
+							$("#bo2").attr("src","img/bolita2.png");
+							$("#bo3").attr("src","img/bolita.png");
+							pos=2
+						}else if(donde=='right'){
+							$('#pr1').animate({marginLeft:'100%'}, 800)
+							$('#pr3').animate({marginLeft:'-100%'}, 0)
+							$('#pr3').animate({marginLeft:'0%'}, 800)
+							$("#bo1").attr("src","img/bolita.png");
+							$("#bo2").attr("src","img/bolita.png");
+							$("#bo3").attr("src","img/bolita2.png");
+							pos=3
+						}
+					});
+					$("#pr2").swipe(function(donde) {
+						if(donde=='left'){
+							$('#pr2').animate({marginLeft:'-100%'}, 800)
+							$('#pr3').animate({marginLeft:'100%'}, 0)
+							$('#pr3').animate({marginLeft:'0%'}, 800)
+							$("#bo1").attr("src","img/bolita.png");
+							$("#bo2").attr("src","img/bolita.png");
+							$("#bo3").attr("src","img/bolita2.png");
+							pos=3
+						}else if(donde=='right'){
+							$('#pr2').animate({marginLeft:'100%'}, 800)
+							$('#pr1').animate({marginLeft:'-100%'}, 0)
+							$('#pr1').animate({marginLeft:'0%'}, 800)
+							$("#bo1").attr("src","img/bolita2.png");
+							$("#bo2").attr("src","img/bolita.png");
+							$("#bo3").attr("src","img/bolita.png");
+							pos=1
+						}
+					});
+					$("#pr3").swipe(function(donde) {
+						if(donde=='left'){
+							$('#pr3').animate({marginLeft:'-100%'}, 800)
+							$('#pr1').animate({marginLeft:'100%'}, 0)
+							$('#pr1').animate({marginLeft:'0%'}, 800)
+							$("#bo1").attr("src","img/bolita2.png");
+							$("#bo2").attr("src","img/bolita.png");
+							$("#bo3").attr("src","img/bolita.png");
+							pos=1
+						}else if(donde=='right'){
+							$('#pr3').animate({marginLeft:'100%'}, 800)
+							$('#pr2').animate({marginLeft:'-100%'}, 0)
+							$('#pr2').animate({marginLeft:'0%'}, 800)
+							$("#bo1").attr("src","img/bolita.png");
+							$("#bo2").attr("src","img/bolita2.png");
+							$("#bo3").attr("src","img/bolita.png");
+							pos=2
+						}
+					});
+                </script>
               </div>
                 
-                
-                
-                
-                
-                
-                
-                
-                
-                
+
                 
                 <div style="position:absolute; width:450%; height:7%; top:84%; z-index:1000; background-color:#FFFFFF">
                     <img src="img/ic1.png" class="icos ic1"/> 
@@ -319,38 +647,142 @@ my nibh sed diameuismod tincidunt.</i>
                 </div>
                 
                 
-                <div id="perfil" class="contenido" style="height:85%; visibility:hidden; z-index:1001">
+                <div id="perfil" class="contenido" style="height:85%; visibility:hidden1; z-index:1001">
                   	  <div class="titulos" style="top:6%;">Perfil</div>
 
                       <div type="text" class="textos" style="top:15%;">Foto:</div>
                       
-                      <div style="position:absolute; width:30%; left:15%; top:20%; background:#8BC542; height:22%;"></div>
+                      <div  style="position:absolute; width:30%; left:15%; top:20%; background:#8BC542; height:22%;">
+                      		<div id="fotos" style="position:absolute; width:100%; height:100%;"></div>
+                      		<img src="img/foto.png" class="centrar" style="height:35%; margin-top:-5%"/>
+                            <div id="fotito" class="avisos" style="width:100%; height:20px; overflow:hidden; top:70%; text-align:center; color:rgba(255,255,255,1.00)">Sube tu foto</div>
+                   			<input id="foto" name="foto" type="file" accept="image/*" style="width:100%; height:100%; opacity:0.0;">
+                            <script>
+								$('#foto').change(function(){ 
+									$('#fotito').html(document.getElementById('foto').value)
+								});
+                           </script>
+                      </div>
                       
                       <div id="bt_edita" style="position:absolute; width:35%; left:50%; top:20%; background:#E11D8D; height:11%; cursor:pointer">
                       		<div id="edita" class="centrar" style="color:#ffffff; width:100%; text-align:center">Edita los datos<br>de facturación</div>
                       </div>
                       
-                      <div type="text" class="textos" style="top:37%; left:50%">Facturas:</div>
+                      <div type="text" class="textos" style="top:37%; left:50%">Facturas: <span>0</span></div>
                       <div class="lineas" style="left:50%; top:42%; width:35%"></div>
                       
-                      <input type="text" class="textos" style="top:44%; padding-top:1%; padding-bottom:1%" value="Nombre:">
-                      <div class="lineas" style="top:50%"></div>
+                      <input id="mod_nombre" type="text" class="textos" style="top:43%; padding-top:1%; padding-bottom:1%" value="Nombre:">
+                      <div class="lineas" style="top:49%"></div>
                         
-                      <input type="text" class="textos" style="top:52%; padding-top:1%; padding-bottom:1%" value="Email:">
-                      <div class="lineas" style="top:58%"></div>
+                      <input id="mod_email" type="text" class="textos" style="top:50%; padding-top:1%; padding-bottom:1%" value="Email:">
+                      <div class="lineas" style="top:56%"></div>
                         
-                      <input type="text" class="textos" style="top:60%; padding-top:1%; padding-bottom:1%" value="Contraseña:">
-                      <div class="lineas" style="top:66%"></div>
+                      <input id="mod_contrasena" type="text" class="textos" style="top:57%; padding-top:1%; padding-bottom:1%" value="Contraseña:">
+                      <div class="lineas" style="top:63%"></div>
                         
-                      <input type="text" class="textos" style="top:68%; padding-top:1%; padding-bottom:1%; width:26%" value="Genero:">
-                      <div class="lineas" style="top:74%; width:26%"></div>
+                  
+                      
+                      <select id="mod_genero" name="genero" class="textos" style="top:65%; width:26%; padding-top:1%; padding-bottom:1%">
+                            <option>Hombre</option>
+                            <option>Mujer</option>
+                      </select> 
+                      
+                      <div class="lineas" style="top:70%; width:26%"></div>
+     
+                      <select id="mod_nacimiento" name="mod_nacimiento" class="textos" style="top:65%; left:47%; width:38%; padding-top:1%; padding-bottom:1%">
+                            <option>Año Nacimiento</option>
+                            <option>2010</option>
+                            <option>2009</option>
+                            <option>2008</option>
+                            <option>2007</option>
+                            <option>2006</option>
+                            <option>2005</option>
+                            <option>2004</option>
+                            <option>2003</option>
+                            <option>2002</option>
+                            <option>2001</option>
+                            <option>2000</option>
+                            <option>1999</option>
+                            <option>1998</option>
+                            <option>1997</option>
+                            <option>1996</option>
+                            <option>1999</option>
+                            <option>1998</option>
+                            <option>1997</option>
+                            <option>1996</option>
+                            <option>1995</option>
+                            <option>1994</option>
+                            <option>1993</option>
+                            <option>1992</option>
+                            <option>1991</option>
+                            <option>1990</option>
+                            <option>1989</option>
+                            <option>1988</option>
+                            <option>1987</option>
+                            <option>1986</option>
+                            <option>1985</option>
+                            <option>1984</option>
+                            <option>1983</option>
+                            <option>1982</option>
+                            <option>1981</option>
+                            <option>1980</option>
+                            <option>1979</option>
+                            <option>1978</option>
+                            <option>1977</option>
+                            <option>1976</option>
+                            <option>1975</option>
+                            <option>1974</option>
+                            <option>1973</option>
+                            <option>1972</option>
+                            <option>1971</option>
+                            <option>1970</option>
+                            <option>1969</option>
+                            <option>1968</option>
+                            <option>1967</option>
+                            <option>1966</option>
+                            <option>1965</option>
+                            <option>1964</option>
+                            <option>1963</option>
+                            <option>1962</option>
+                            <option>1961</option>
+                            <option>1960</option>
+                            <option>1959</option>
+                            <option>1958</option>
+                            <option>1957</option>
+                            <option>1956</option>
+                            <option>1955</option>
+                            <option>1954</option>
+                            <option>1953</option>
+                            <option>1952</option>
+                            <option>1951</option>
+                            <option>1950</option>
+                            <option>1949</option>
+                            <option>1948</option>
+                            <option>1947</option>
+                            <option>1946</option>
+                            <option>1945</option>
+                            <option>1944</option>
+                            <option>1943</option>
+                            <option>1942</option>
+                            <option>1941</option>
+                            <option>1940</option>
+                            <option>1939</option>
+                            <option>1938</option>
+                            <option>1937</option>
+                            <option>1936</option>
+                            <option>1935</option>
+                            <option>1934</option>
+                            <option>1933</option>
+                            <option>1932</option>
+                            <option>1931</option>
+                            <option>1930</option>
+                      </select>
+                      <div class="lineas" style="top:70%; width:38%; left:47%"></div>
                         
-                      <input type="text" class="textos" style="top:68%; padding-top:1%; padding-bottom:1%; left:47%; width:38%" value="Fecha nacimiento:">
-                      <div class="lineas" style="top:74%; width:38%; left:47%"></div>
-                        
-
-                      <div id="bt_finalizar" style="position:absolute; top:81%; width:70%; left:15%; height:7%; background:#E11D8D; cursor:pointer">
-                      	  <div class="botones" style="color:#FFFFFF; top:50%">Finalizar</div>
+					  <input type="submit" class="botones" style="position:absolute; border:none; top:76%; width:calc(70% + 4px); left:15%; height:7%; background:#8BC542; cursor:pointer; color:#FFFFFF;" value="Finalizar">
+                     
+                      <div id="bt_cancelar2" style="position:absolute; top:83%; width:calc(70% + 4px); left:15%; height:7%; background:#E11D8D">
+                      	  <div class="botones" style="color:#FFFFFF; top:50%">Cancelar</div>
                       </div>
                       
                 </div>
@@ -359,44 +791,328 @@ my nibh sed diameuismod tincidunt.</i>
                  <div id="factura" class="contenido" style="visibility:hidden; z-index:1001">
                  	  <div style="position:absolute; width:100%; height:112%; background-color:#ffffff"></div>
                   	  <div class="titulos" style="top:6%;">Alta de datos</div>
+					  
+                      <form name="forma_factura" id="forma_factura" method="put">
+                      
+                          <input id="fac_RFC" name="fac_RFC" type="text" class="textos" style="top:13%; padding-top:1%; padding-bottom:1%" value="RFC:" onFocus="borrar1a()" onBlur="checar1a()" tabindex="11">
+                          <div class="lineas" style="top:20%"></div>
+                            
+                          <input id="fac_Rfactura" name="fac_Rfactura" type="text" class="textos" style="top:20%; padding-top:1%; padding-bottom:1%" value="Razon Social:" onFocus="borrar2a()" onBlur="checar2a()" tabindex="12">
+                          <div class="lineas" style="top:27%"></div>
+                            
+                          <input  id="fac_Calle" name="fac_Calle" type="text" class="textos" style="top:27%; width:38%; padding-top:1%; padding-bottom:1%" value="Calle:" onFocus="borrar3a()" onBlur="checar3a()" tabindex="13">
+                         
+                          <div class="lineas" style="top:34%;"></div>
+                          
+                          <input  id="fac_NumE" name="fac_NumE" type="text" class="textos" style="top:34%; width:34%; padding-top:1%; padding-bottom:1%" value="Num Ext:" onFocus="borrar4a()" onBlur="checar4a()" tabindex="13">
+                          <input  id="fac_NumI" name="fac_NumI" type="text" class="textos" style="top:34%; width:34%; left:51%; padding-top:1%; padding-bottom:1%" value="Num Int:" onFocus="borrar5a()" onBlur="checar5a()" tabindex="13">
+                          
+                          <div class="lineas" style="top:41%; width:34%"></div>
+                          <div class="lineas" style="top:41%; width:34%; left:51%"></div>
+    
+                            
+                          <input id="fac_ColCli" name="fac_ColCli" type="text" class="textos" style="top:41%; padding-top:1%; padding-bottom:1%" value="Colonia:" onFocus="borrar6a()" onBlur="checar6a()" tabindex="14">
+                          <div class="lineas" style="top:48%"></div>
+                          
+                          
+                          <input id="fac_DelCli" name="fac_DelCli" type="text" class="textos" style="top:48%; padding-top:1%; padding-bottom:1%; width:34%" value="Municipio:" onFocus="borrar7a()" onBlur="checar7a()" tabindex="14">
+                          <input id="fac_CiuCli" name="fac_CiuCli" type="text" class="textos" style="top:48%; padding-top:1%; padding-bottom:1%; width:34%; left:51%" value="Ciudad:" onFocus="borrar8a()" onBlur="checar8a()" tabindex="14">
+                          <div class="lineas" style="top:55%; width:34%"></div>
+                          <div class="lineas" style="top:55%; width:34%; left:51%"></div>
+                          
+                          <input id="fac_EdoCli" name="fac_EdoCli" type="text" class="textos" style="top:55%; padding-top:1%; padding-bottom:1%; width:34%" value="Estado:" onFocus="borrar9a()" onBlur="checar9a()" tabindex="14">
+                          <input id="fac_PaisCli" name="fac_PaisCli" type="text" class="textos" style="top:55%; padding-top:1%; padding-bottom:1%; width:34%; left:51%" value="Pais:" onFocus="borrar10a()" onBlur="checar10a()" tabindex="14">
+                          
+                        
+                          <div class="lineas" style="top:62%; width:34%"></div>
+                          <div class="lineas" style="top:62%; width:34%; left:51%"></div>
+                          
+                          <input id="fac_CPCli" name="fac_CPCli" type="text" class="textos" style="top:62%; padding-top:1%; padding-bottom:1%" value="Codigo Postal:" onFocus="borrar11a()" onBlur="checar11a()" tabindex="16">
+                          <div class="lineas" style="top:69%"></div>
+                      
+                      
+                      
+                      <script>
+	
+					  
+                      	function borrar1a(){
+							if(document.getElementById('fac_RFC').value=='RFC:'){
+								document.getElementById('fac_RFC').value=''
+							}
+						}
+				
+						function checar1a(){
+							if(document.getElementById('fac_RFC').value==''){
+								document.getElementById('fac_RFC').value='RFC:'
+							}
+							StatusBar.hide(); 
+						}
+						
+						function borrar2a(){
+							if(document.getElementById('fac_Rfactura').value=='Razon Social:'){
+								document.getElementById('fac_Rfactura').value=''
+							}
+						}
+				
+						function checar2a(){
+							if(document.getElementById('fac_Rfactura').value==''){
+								document.getElementById('fac_Rfactura').value='Razon Social:'
+							}
+							StatusBar.hide(); 
+						}
+						
+						function borrar3a(){
+							if(document.getElementById('fac_Calle').value=='Calle:'){
+								document.getElementById('fac_Calle').value=''
+							}
+						}
+				
+						function checar3a(){
+							if(document.getElementById('fac_Calle').value==''){
+								document.getElementById('fac_Calle').value='Calle:'
+							}
+							StatusBar.hide(); 
+						}
+						
+						function borrar4a(){
+							if(document.getElementById('fac_NumE').value=='Num Ext:'){
+								document.getElementById('fac_NumE').value=''
+							}
+						}
+				
+						function checar4a(){
+							if(document.getElementById('fac_NumE').value==''){
+								document.getElementById('fac_NumE').value='Num Ext:'
+							}
+							StatusBar.hide(); 
+						}
+						
+						function borrar5a(){
+							if(document.getElementById('fac_NumI').value=='Num Int:'){
+								document.getElementById('fac_NumI').value=''
+							}
+						}
+				
+						function checar5a(){
+							if(document.getElementById('fac_NumI').value==''){
+								document.getElementById('fac_NumI').value='Num Int:'
+							}
+							StatusBar.hide(); 
+						}
 
-                      <input type="text" class="textos" style="top:13%; padding-top:1%; padding-bottom:1%" value="RFC:">
-                      <div class="lineas" style="top:20%"></div>
+						
+						function borrar6a(){
+							if(document.getElementById('fac_ColCli').value=='Colonia:'){
+								document.getElementById('fac_ColCli').value=''
+							}
+						}
+				
+						function checar6a(){
+							if(document.getElementById('fac_ColCli').value==''){
+								document.getElementById('fac_ColCli').value='Colonia:'
+							}
+							StatusBar.hide(); 
+						}
+						
+						
+						function borrar7a(){
+							if(document.getElementById('fac_DelCli').value=='Municipio:'){
+								document.getElementById('fac_DelCli').value=''
+							}
+						}
+				
+						function checar7a(){
+							if(document.getElementById('fac_DelCli').value==''){
+								document.getElementById('fac_DelCli').value='Municipio:'
+							}
+							StatusBar.hide(); 
+						}
+						
+						function borrar8a(){
+							if(document.getElementById('fac_CiuCli').value=='Ciudad:'){
+								document.getElementById('fac_CiuCli').value=''
+							}
+						}
+				
+						function checar8a(){
+							if(document.getElementById('fac_CiuCli').value==''){
+								document.getElementById('fac_CiuCli').value='Ciudad:'
+							}
+							StatusBar.hide(); 
+						}
+						
+						
+						function borrar9a(){
+							if(document.getElementById('fac_EdoCli').value=='Estado:'){
+								document.getElementById('fac_EdoCli').value=''
+							}
+						}
+				
+						function checar9a(){
+							if(document.getElementById('fac_EdoCli').value==''){
+								document.getElementById('fac_EdoCli').value='Estado:'
+							}
+							StatusBar.hide(); 
+						}
+						
+						
+						function borrar10a(){
+							if(document.getElementById('fac_PaisCli').value=='Pais:'){
+								document.getElementById('fac_PaisCli').value=''
+							}
+						}
+				
+						function checar10a(){
+							if(document.getElementById('fac_PaisCli').value==''){
+								document.getElementById('fac_PaisCli').value='Pais:'
+							}
+							StatusBar.hide(); 
+						}
+						
+						function borrar11a(){
+							if(document.getElementById('fac_CPCli').value=='Codigo Postal:'){
+								document.getElementById('fac_CPCli').value=''
+							}
+						}
+				
+						function checar11a(){
+							if(document.getElementById('fac_CPCli').value==''){
+								document.getElementById('fac_CPCli').value='Codigo Postal:'
+							}
+							StatusBar.hide(); 
+						}
+                      </script>
                         
-                      <input type="text" class="textos" style="top:23%; padding-top:1%; padding-bottom:1%" value="Razon Social:">
-                      <div class="lineas" style="top:30%"></div>
-                        
-                      <input type="text" class="textos" style="top:33%; padding-top:1%; padding-bottom:1%" value="Calle y numero:">
-                      <div class="lineas" style="top:40%"></div>
-                        
-                      <input type="text" class="textos" style="top:43%; padding-top:1%; padding-bottom:1%" value="Municipio o delegación:">
-                      <div class="lineas" style="top:50%"></div>
-                      
-                      <input type="text" class="textos" style="top:53%; padding-top:1%; padding-bottom:1%" value="Estado:">
-                      <div class="lineas" style="top:60%"></div>
-                      
-                      <input type="text" class="textos" style="top:63%; padding-top:1%; padding-bottom:1%" value="Codigo Postal:">
-                      <div class="lineas" style="top:70%"></div>
-                      
-                      <input type="text" class="textos" style="top:73%; padding-top:1%; padding-bottom:1%" value="Correo:">
-                      <div class="lineas" style="top:80%"></div>
-                        
                       
                         
-                      <div class="avisos" style="top:85%; left:22%">Declaro IEPS</div>
-                      <img src="img/cuadrito.png" style="position:absolute; top:83.5%; height:5%; left:15%"/>
+                      <div id="declaro1" class="avisos" style="top:73.5%; left:22%">Declaro IEPS</div>
+                      <img id="declaro2" src="img/cuadrito.png" style="position:absolute; top:72.5%; height:5%; left:15%"/>
+                      <img id="palomita3" src="img/palomita.png" style="position:absolute; top:72.5%; height:5%; left:15%; cursor:pointer; display:none"/> 
                       
-                      <div class="avisos" style="top:85%; left:57%">Extranjero</div>
-                      <img src="img/cuadrito.png" style="position:absolute; top:83.5%; height:5%; left:50%"/> 
+                      <script>
+					  var dec=0
+                      	$('#declaro, #declaro2, #palomita3').click(function(){
+							if(dec==0){
+								$('#palomita3').show()
+								dec=1
+							}else{
+								$('#palomita3').hide()
+								dec=0
+							}
+						})
+                      </script>
                       
-                      <div id="bt_continuar" style="position:absolute; top:97%; width:70%; left:15%; height:8%; background:#8BC542">
-                      	  <div class="botones" style="color:#FFFFFF; top:50%">Continuar</div>
+                      <div id="extranjero1" class="avisos" style="top:73.5%; left:57%">Extranjero</div>
+                      <img id="extranjero2" src="img/cuadrito.png" style="position:absolute; top:72.5%; height:5%; left:50%"/> 
+                      <img id="palomita4" src="img/palomita.png" style="position:absolute; top:72.5%; height:5%; left:50%; cursor:pointer; display:none"/> 
+                      
+                      <script>
+					  var ext=0
+                      	$('#extranjero, #extranjero2, #palomita4').click(function(){
+							if(ext==0){
+								$('#palomita4').show()
+								ext=1
+							}else{
+								$('#palomita4').hide()
+								ext=0
+							}
+						})
+                      </script>
+                      
+                      
+                      <input type="submit" id="bt_continuar" class="botones" style="position:absolute; top:87%; width:calc(70% + 4px); border:none; left:15%; height:8%; background:#8BC542; color:#FFFFFF" value="¡Listo!">
+                      	  
+                      
+                      <div id="bt_cancelar" style="position:absolute; top:97%; width:70%; left:15%; height:8%; background:#E11D8D">
+                      	  <div class="botones" style="color:#FFFFFF; top:50%">Cancelar</div>
                       </div>
-                      
-                      
-                      
-                      <div class="avisos" style="top:91%; width:100%; text-align:center"><span style="color:#E11D8D">* Campos obligatorios</span></div>
-                      
+
+                      <div id="avisos2" class="avisos" style="top:81%; width:100%; text-align:center; color:#E11D8D"></div>
+                      </form>
+     <script>
+         $('#forma_factura').submit(function() {
+			var rfc = document.getElementById("fac_RFC").value
+			var rz = document.getElementById("fac_Rfactura").value
+			var calle = document.getElementById("fac_Calle").value
+			var NumE = document.getElementById("fac_NumE").value
+			var ColCli = document.getElementById("fac_ColCli").value
+			var DelCli = document.getElementById("fac_DelCli").value
+			var EdoCli = document.getElementById("fac_EdoCli").value
+			var PaisCli = document.getElementById("fac_PaisCli").value
+			var CPCli = document.getElementById("fac_CPCli").value
+			
+			if(rfc == 'RFC:' || rfc == ''){
+				$('#avisos2').html('* rfc requerido')
+				setTimeout("$('#avisos2').html('')", 1500)
+				return false;
+			}
+			
+			if(rz == 'Razon Social:' || rz == ''){
+				$('#avisos2').html('* Razon Social requerido')
+				setTimeout("$('#avisos2').html('')", 1500)
+				return false;
+			}
+			
+			if(calle == 'Calle:' || calle == ''){
+				$('#avisos2').html('* calle requerido')
+				setTimeout("$('#avisos2').html('')", 1500)
+				return false;
+			}
+			
+			if(NumE == 'Num Ext:' || NumE == ''){
+				$('#avisos2').html('* numero exterior requerido')
+				setTimeout("$('#avisos2').html('')", 1500)
+				return false;
+			}
+			
+			if(ColCli == 'Colonia:' || ColCli == ''){
+				$('#avisos2').html('* colonia requerido')
+				setTimeout("$('#avisos2').html('')", 1500)
+				return false;
+			}
+			
+			if(DelCli == 'Municipio:' || ColCli == ''){
+				$('#avisos2').html('* municipio o delegacion requerido')
+				setTimeout("$('#avisos2').html('')", 1500)
+				return false;
+			}
+			
+			if(EdoCli == 'Estado:' || EdoCli == ''){
+				$('#avisos2').html('* estado requerido')
+				setTimeout("$('#avisos2').html('')", 1500)
+				return false;
+			}
+			
+			if(PaisCli == 'Pais:' || PaisCli == ''){
+				$('#avisos2').html('* pais requerido')
+				setTimeout("$('#avisos2').html('')", 1500)
+				return false;
+			}
+			
+			
+			if(CPCli == 'Codigo Postal:' || CPCli == ''){
+				$('#avisos2').html('* codigo postal requerido')
+				setTimeout("$('#avisos2').html('')", 1500)
+				return false;
+			}
+			
+			document.getElementById("RFC").value = document.getElementById("fac_RFC").value
+			document.getElementById("Rfactura").value = document.getElementById("fac_Rfactura").value
+			document.getElementById("Calle").value = document.getElementById("fac_Calle").value
+			document.getElementById("NumE").value = document.getElementById("fac_NumE").value
+			document.getElementById("NumI").value = document.getElementById("fac_NumI").value
+			document.getElementById("ColCli").value = document.getElementById("fac_ColCli").value
+			document.getElementById("DelCli").value = document.getElementById("fac_DelCli").value
+			document.getElementById("CiuCli").value = document.getElementById("fac_CiuCli").value
+			document.getElementById("EdoCli").value = document.getElementById("fac_EdoCli").value
+			document.getElementById("PaisCli").value = document.getElementById("fac_PaisCli").value
+			document.getElementById("CPCli").value = document.getElementById("fac_CPCli").value
+			document.getElementById("IEPS").value = dec
+			document.getElementById("Extranjero").value = ext
+			$('#factura').transition({left:'130%', rotate: '20deg'}, 1000)
+			return false;
+        }); 
+                      </script>
                 </div>
                 
                 
@@ -418,6 +1134,13 @@ my nibh sed diameuismod tincidunt.</i>
         
         
         <script>
+		
+		
+		
+		
+		
+		
+		
 		var ssalta
 		
 		function salta(){
@@ -457,7 +1180,7 @@ my nibh sed diameuismod tincidunt.</i>
 				
 				$('.avisos2').css('font-size', height/50+'px')
 				$('.avisos2').css('line-height', (height/50)+5+'px')
-				
+	
 				$('.botones').css('font-size', height/35+'px')
 				$('.botones').css('margin-top', -(height/35)/2+'px')
 				$('#claves').css('font-size', height/30+'px')
@@ -471,6 +1194,7 @@ my nibh sed diameuismod tincidunt.</i>
 					$('#todo').animate({left:'100%'}, 0)
 					$('#todo').animate({left:'0%'}, 1000)
 					$('#portada').delay(1000).fadeOut(0)
+					StatusBar.hide();
 					//$('#todo')
 				}
 				
@@ -483,6 +1207,7 @@ my nibh sed diameuismod tincidunt.</i>
 	
 								$('#bt_cerrar').fadeIn()
 								$('#bt_menu').fadeOut()
+								StatusBar.hide(); 
 				})
 				
 				$('#bt_cerrar').click(function(){
@@ -492,9 +1217,19 @@ my nibh sed diameuismod tincidunt.</i>
 								$('#bt_menu').fadeIn()
 				})
 				
+				$('#bt_cancelar').click(function(){
+								$('#factura').transition({left:'130%', rotate: '20deg'}, 1000)
+								$('#palomita1').hide()
+								palo=0
+				})
+				
+				//$('#bt_continuar').click(function(){
+					//			$('#factura').transition({left:'130%', rotate: '20deg'}, 1000)
+				//})
+				
 				
 				$('#bt1').click(function(){
-								StatusBar.hide(); 
+								$('#factura').transition({left:'130%', rotate: '20deg'}, 0)
 								$('#perfil').css('visibility','visible')
 								$('#perfil').transition({left:'0%', rotate: '0deg'}, 0)
 								$('#perfil').css('z-index','1001')
@@ -505,12 +1240,18 @@ my nibh sed diameuismod tincidunt.</i>
 								$('#bt_menu').fadeIn()
 								$('#bt_atras').fadeIn()
 								$('#bt_alerta').animate({right:'13%'},500)
+								StatusBar.hide(); 
+								
+								document.getElementById('mod_nombre').value = localStorage.getItem("nombre")
+								document.getElementById('mod_email').value = localStorage.getItem("email")
+								document.getElementById('mod_contrasena').value = localStorage.getItem("contrsena")
+								document.getElementById('mod_genero').value = localStorage.getItem("genero")
+								document.getElementById('mod_nacimiento').value = localStorage.getItem("anio")
 				})
 				
 				var edi=0
 				
 				$('#bt_edita').click(function(){
-								StatusBar.show(); 
 								$('#factura').css('visibility','visible')
 								$('#factura').transition({left:'130%', rotate: '20deg'}, 0)
 								$('.contenido').css('z-index','1')
@@ -521,14 +1262,24 @@ my nibh sed diameuismod tincidunt.</i>
 								edi=2
 				})
 				
-				$('#bt_requiere, #bt_requiere2').click(function(){
-								$('#factura').css('visibility','visible')
-								$('#factura').transition({left:'130%', rotate: '20deg'}, 0)
-								//$('.contenido').css('z-index','1')
-								//$('#perfil').css('z-index','2000')
-								$('#factura').css('z-index','2001')
-								$('#factura').transition({left:'0%', rotate: '0deg'}, 1000)
-								edi=1
+				
+				var palo =0
+				$('#bt_requiere, #bt_requiere2, #palomita1').click(function(){
+								if(palo==0){
+									
+									$('#palomita1').show()
+									$('#factura').css('visibility','visible')
+									$('#factura').transition({left:'130%', rotate: '20deg'}, 0)
+									$('#factura').css('z-index','2001')
+									$('#factura').transition({left:'0%', rotate: '0deg'}, 1000)
+									
+									edi=1
+									palo=1
+									
+								}else{
+									$('#palomita1').hide()
+									palo=0
+								}
 				})
 				
 				
@@ -545,6 +1296,7 @@ my nibh sed diameuismod tincidunt.</i>
 								$('#bt_menu').fadeIn()
 								$('#bt_atras').fadeIn()
 								$('#bt_alerta').animate({right:'13%'},500)
+								StatusBar.hide(); 
 				})
 				
 				
@@ -589,6 +1341,7 @@ my nibh sed diameuismod tincidunt.</i>
 								$('#bt_menu').fadeIn()
 								$('#bt_atras').fadeIn()
 								$('#bt_alerta').animate({right:'13%'},500)
+								StatusBar.hide(); 
 				})
 				
 				$('#bt4').click(function(){
@@ -604,6 +1357,7 @@ my nibh sed diameuismod tincidunt.</i>
 								$('#bt_menu').fadeIn()
 								$('#bt_atras').fadeOut()
 								$('#bt_alerta').animate({right:'3%'},500)
+								StatusBar.hide(); 
 				})
 				
 				
@@ -626,11 +1380,13 @@ my nibh sed diameuismod tincidunt.</i>
 								
 								$('#bt_cerrar').fadeOut()
 								$('#bt_menu').fadeIn()
+								StatusBar.hide(); 
 				})
 				
 				
 				
 				$('#bt_continuar').click(function(){
+					StatusBar.hide(); 
 					$('#factura').transition({left:'130%', rotate: '20deg'}, 1000)
 					if(edi==2){
 						posicion=1
@@ -706,12 +1462,8 @@ my nibh sed diameuismod tincidunt.</i>
 								posicion=4
 				})
 				
-				if (StatusBar.isVisible) { 
-					alert('hola')
-				} 
-				
-				StatusBar.show(); 
-                     
+		
+                   
 		
         </script>
     </body>
