@@ -348,7 +348,8 @@
 					url: $(this).attr('action'),
 					data: $(this).serialize(),
 					success: function(data) {
-									/*localStorage.setItem("nombre", nombre);
+									$('#aviso1').html('* Espera un momento')
+									localStorage.setItem("nombre", nombre);
 									localStorage.setItem("email", email);
 									localStorage.setItem("contrasena", contrasena);
 									localStorage.setItem("genero", document.getElementById("genero").value);
@@ -365,8 +366,8 @@
 									localStorage.setItem("EdoCli", document.getElementById("EdoCli").value);
 									localStorage.setItem("PaisCli", document.getElementById("PaisCli").value);
 									localStorage.setItem("CpCli", document.getElementById("CpCli").value);
-									localStorage.setItem("IEPS", document.getElementById("IEPS").value);
-									localStorage.setItem("Extranjero", document.getElementById("Extranjero").value);*/
+									localStorage.setItem("IEPS", dec);
+									localStorage.setItem("Extranjero", ext);
 	
 									//alert(data)
 									localStorage.setItem("codigo", data);
@@ -835,7 +836,7 @@
 			}
 	
 			var filtro = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;	
-			if (!filtro.test(email)) {
+			if (!filtro.test(mod_email)) {
 				$('#aviso4').html('* email incorrecto')
 				setTimeout("$('#aviso4').html('')", 1500)
 			   return false;
