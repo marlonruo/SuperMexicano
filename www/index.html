@@ -298,8 +298,7 @@
                       
                   </form> 
                   
-                  <script>
-		var reg = 0		  
+                  <script>		  
          $('#forma_registro').submit(function() {
 			var nombre = document.getElementById("nombre").value
 			var email = document.getElementById("email").value
@@ -343,17 +342,13 @@
 				return false;
 			}
 			
-			if(reg==1){
-				return false;
-			}
-			reg=1
-			$.ajax({
 			
+			$.ajax({			
 					type: 'POST',
 					url: $(this).attr('action'),
 					data: $(this).serialize(),
 					success: function(data) {
-									localStorage.setItem("nombre", nombre);
+									/*localStorage.setItem("nombre", nombre);
 									localStorage.setItem("email", email);
 									localStorage.setItem("contrasena", contrasena);
 									localStorage.setItem("genero", document.getElementById("genero").value);
@@ -371,9 +366,8 @@
 									localStorage.setItem("PaisCli", document.getElementById("PaisCli").value);
 									localStorage.setItem("CpCli", document.getElementById("CpCli").value);
 									localStorage.setItem("IEPS", document.getElementById("IEPS").value);
-									localStorage.setItem("Extranjero", document.getElementById("Extranjero").value);
+									localStorage.setItem("Extranjero", document.getElementById("Extranjero").value);*/
 	
-									reg=0
 									//alert(data)
 									localStorage.setItem("codigo", data);
 									$('#clave').css('visibility','visible')
