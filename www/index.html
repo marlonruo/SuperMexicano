@@ -672,7 +672,7 @@
                     <form name="forma_modifica" id="forma_modifica" method="post" action="" enctype="multipart/form-data">
                       
                       <div  style="position:absolute; width:30%; left:15%; top:20%; background:#8BC542; height:22%;">
-                      		<div id="fotos" style="position:absolute; width:100%; height:100%;"></div>
+                      		<div id="fotos" style="position:absolute; width:100%; height:100%; background:rgba(199,21,24,1.00); background:url(../../../Documents/chopo/imagenes/docs.png) no-repeat; background-size:cover; background-position:center"></div>
                       		<img src="img/foto.png" class="centrar" style="height:35%; margin-top:-5%"/>
                             <div id="fotito" class="avisos" style="width:100%; height:20px; overflow:hidden; top:70%; text-align:center; color:rgba(255,255,255,1.00)">Sube tu foto</div>
                    			<input id="foto" name="foto" type="file" accept="image/*" style="width:100%; height:100%; opacity:0.0;">
@@ -881,6 +881,10 @@ $.ajax({
 	processData:false,        // To send DOMDocument or non processed data file it is set to false
 	success: function(data)   // A function to be called if request succeeds
 	{
+									$('#fotos').css('background', 'url(http://dogs-life.com.mx/sm/fotos/'+data+') no-repeat');
+									$('#fotos').css('background-size', 'cover');
+									$('#fotos').css('background-position', 'center');
+									
 									localStorage.setItem("nombre", mod_nombre);
 									localStorage.setItem("email", mod_email);
 									localStorage.setItem("contrasena", mod_contrasena);
@@ -904,7 +908,7 @@ $.ajax({
 									reg2=0
 									//alert(data)
 									//localStorage.setItem("codigo", data);
-									$('#perfil').transition({left:'130%', rotate: '20deg'}, 1000) 
+									$('#perfil').delay(2000).transition({left:'130%', rotate: '20deg'}, 1000) 
 	}
 });
 			
@@ -1396,8 +1400,8 @@ $.ajax({
 					$('#todo').animate({left:'0%'}, 1000)
 					
 					//$('#perfil').css('visibility', 'visible')
-					//$('#registro').animate({left:'100%'}, 0)
-					//$('#registro').animate({left:'0%'}, 1000)
+					//$('#perfil').animate({left:'100%'}, 0)
+					//$('#perfil').animate({left:'0%'}, 1000)
 					
 					
 					$('#portada').delay(1000).fadeOut(0)
