@@ -669,7 +669,7 @@
                       <div type="text" class="textos" style="top:15%;">Foto:</div>
                     
                     
-                    <form name="forma_modifica" id="forma_modifica" method="post" action="http://dogs-life.com.mx/sm/modificar.php">
+                    <form name="forma_modifica" id="forma_modifica" method="post" action="" enctype="multipart/form-data">
                       
                       <div  style="position:absolute; width:30%; left:15%; top:20%; background:#8BC542; height:22%;">
                       		<div id="fotos" style="position:absolute; width:100%; height:100%;"></div>
@@ -824,6 +824,11 @@
                      
                      <script>
 					 
+					 
+
+					 
+					 
+					 
 			reg2=0		 
             $('#forma_modifica').submit(function() {
 			var mod_nombre = document.getElementById("mod_nombre").value
@@ -866,7 +871,45 @@
 				return false;
 			}
 			reg2=1
-			$.ajax({
+			
+$.ajax({
+	url: "http://dogs-life.com.mx/sm/modificar.php", // Url to which the request is send
+	type: "POST",             // Type of request to be send, called as method
+	data: new FormData(this), // Data sent to server, a set of key/value pairs (i.e. form fields and values)
+	contentType: false,       // The content type used when sending data to the server.
+	cache: false,             // To unable request pages to be cached
+	processData:false,        // To send DOMDocument or non processed data file it is set to false
+	success: function(data)   // A function to be called if request succeeds
+	{
+									localStorage.setItem("nombre", mod_nombre);
+									localStorage.setItem("email", mod_email);
+									localStorage.setItem("contrasena", mod_contrasena);
+									localStorage.setItem("genero", document.getElementById("mod_genero").value);
+									localStorage.setItem("anio", document.getElementById("mod_nacimiento").value);
+									
+									localStorage.setItem("RFC", document.getElementById("mod_RFC").value);
+									localStorage.setItem("Rfactura", document.getElementById("mod_Rfactura").value);
+									localStorage.setItem("Calle", document.getElementById("mod_Calle").value);
+									localStorage.setItem("NumE", document.getElementById("mod_NumE").value);
+									localStorage.setItem("NumI", document.getElementById("mod_NumI").value);
+									localStorage.setItem("ColCli", document.getElementById("mod_ColCli").value);
+									localStorage.setItem("DelCli", document.getElementById("mod_DelCli").value);
+									localStorage.setItem("CiuCli", document.getElementById("mod_CiuCli").value);
+									localStorage.setItem("EdoCli", document.getElementById("mod_EdoCli").value);
+									localStorage.setItem("PaisCli", document.getElementById("mod_PaisCli").value);
+									localStorage.setItem("CPCli", document.getElementById("mod_CPCli").value);
+									localStorage.setItem("IEPS", document.getElementById("mod_IEPS").value);
+									localStorage.setItem("Extranjero", document.getElementById("mod_Extranjero").value);
+	
+									reg2=0
+									//alert(data)
+									//localStorage.setItem("codigo", data);
+									$('#perfil').transition({left:'130%', rotate: '20deg'}, 1000) 
+	}
+});
+			
+			
+			/*$.ajax({
 					type: 'POST',
 					url: $(this).attr('action'),
 					data: $(this).serialize(),
@@ -896,7 +939,7 @@
 									//localStorage.setItem("codigo", data);
 									$('#perfil').transition({left:'130%', rotate: '20deg'}, 1000) 
 					}
-			})
+			})*/
 			return false;
         }); 
                      </script>
