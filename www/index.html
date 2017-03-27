@@ -1432,6 +1432,14 @@ $.ajax({
 					url: $(this).attr('action'),
 					data: $(this).serialize(),
 					success: function(data) {
+									alert(data)
+									var datos = data
+									
+									datos = datos.split('/-/');
+									alert(datos[0])
+									alert(datos[1])
+									
+									
 									$('#aviso5').html('')
 									
 									$('#codigo').css('visibility','visible')
