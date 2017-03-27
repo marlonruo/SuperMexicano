@@ -1432,12 +1432,40 @@ $.ajax({
 					url: $(this).attr('action'),
 					data: $(this).serialize(),
 					success: function(data) {
-									alert(data)
+									
 									var datos = data
 									
 									datos = datos.split('/-/');
-									alert(datos[0])
-									alert(datos[1])
+									
+									if(datos[2] != ""){
+										$('#fotos').css('background', 'url(http://dogs-life.com.mx/sm/fotos/'+datos[2]+') no-repeat');
+										$('#fotos').css('background-size', 'cover');
+										$('#fotos').css('background-position', 'center');
+									}
+									
+									
+									document.getElementById('cc').value = datos[0];
+									document.getElementById('mod_nombre').value = datos[1];
+									
+									document.getElementById('mod_email').value = datos[4];
+									document.getElementById('mod_contrasena').value = document.getElementById("log_contrasena").value
+									document.getElementById('mod_genero').value = datos[6];
+									document.getElementById('mod_nacimiento').value = datos[5];
+								
+									
+									document.getElementById("RFC").value = datos[3];
+									document.getElementById("Rfactura").value = datos[7];
+									document.getElementById("Calle").value = datos[8];
+									document.getElementById("NumE").value = datos[9];
+									document.getElementById("NumI").value = datos[10];
+									document.getElementById("ColCli").value = datos[11];
+									document.getElementById("DelCli").value = datos[12];
+									document.getElementById("CiuCli").value = datos[13];
+									document.getElementById("EdoCli").value = datos[14];
+									document.getElementById("PaisCli").value = datos[15];
+									document.getElementById("CPCli").value = datos[16];
+									document.getElementById("IEPS").value = datos[17];
+									document.getElementById("Extranjero").value = datos[18];
 									
 									
 									$('#aviso5').html('')
