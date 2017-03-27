@@ -291,7 +291,7 @@
                       	  <div class="botones" style="color:#FFFFFF; top:50%">Inicar Sesión con Facebook</div>
                       </div>
                       
-                      <div class="avisos" style="top:87%; width:100%; text-align:center">¿Ya tienes una cuenta? <span style="color:#E11D8D">Iniciar Sesión</span></div>
+                      <div id="bt_logueate" class="avisos" style="top:87%; width:100%; text-align:center; cursor:pointer">¿Ya tienes una cuenta? <span style="color:#E11D8D">Iniciar Sesión</span></div>
                       
                       <div id="aviso1" class="avisos" style="top:61%; width:100%; text-align:center; color:#E11D8D"></div>
                       
@@ -666,12 +666,12 @@
                 <div id="perfil" class="contenido" style="height:85%; visibility:hidden; z-index:1001">
                   	  <div class="titulos" style="top:6%;">Perfil</div>
 
-                      <div type="text" class="textos" style="top:15%;">Foto:</div>
+                      <div type="text" class="textos" style="top:14%;">Foto:</div>
                     
                     
                     <form name="forma_modifica" id="forma_modifica" method="post" action="" enctype="multipart/form-data">
                       
-                      <div  style="position:absolute; width:30%; left:15%; top:20%; background:#8BC542; height:22%;">
+                      <div  style="position:absolute; width:30%; left:15%; top:19%; background:#8BC542; height:22%;">
                       		<div id="fotos" style="position:absolute; width:100%; height:100%; background:rgba(199,21,24,1.00); background:url(../../../Documents/chopo/imagenes/docs.png) no-repeat; background-size:cover; background-position:center"></div>
                       		<img src="img/foto.png" class="centrar" style="height:35%; margin-top:-5%"/>
                             <div id="fotito" class="avisos" style="width:100%; height:20px; overflow:hidden; top:70%; text-align:center; color:rgba(255,255,255,1.00)">Sube tu foto</div>
@@ -683,32 +683,32 @@
                            </script>
                       </div>
                       
-                      <div id="bt_edita" style="position:absolute; width:35%; left:50%; top:20%; background:#E11D8D; height:11%; cursor:pointer">
+                      <div id="bt_edita" style="position:absolute; width:35%; left:50%; top:19%; background:#E11D8D; height:11%; cursor:pointer">
                       		<div id="edita" class="centrar" style="color:#ffffff; width:100%; text-align:center">Edita los datos<br>de facturación</div>
                       </div>
                       
-                      <div type="text" class="textos" style="top:37%; left:50%">Facturas: <span>0</span></div>
-                      <div class="lineas" style="left:50%; top:42%; width:35%"></div>
+                      <div type="text" class="textos" style="top:36%; left:50%">Facturas: <span>0</span></div>
+                      <div class="lineas" style="left:50%; top:41%; width:35%"></div>
                       
-                      <input id="mod_nombre" name="mod_nombre" type="text" class="textos" style="top:43%; padding-top:1%; padding-bottom:1%" value="Nombre:">
-                      <div class="lineas" style="top:49%"></div>
+                      <input id="mod_nombre" name="mod_nombre" type="text" class="textos" style="top:42%; padding-top:1%; padding-bottom:1%" value="Nombre:">
+                      <div class="lineas" style="top:48%"></div>
                         
-                      <input id="mod_email" name="mod_email" type="text" class="textos" style="top:50%; padding-top:1%; padding-bottom:1%" value="Email:">
-                      <div class="lineas" style="top:56%"></div>
+                      <input id="mod_email" name="mod_email" type="text" class="textos" style="top:49%; padding-top:1%; padding-bottom:1%" value="Email:">
+                      <div class="lineas" style="top:55%"></div>
                         
-                      <input id="mod_contrasena" name="mod_contrasena" type="text" class="textos" style="top:57%; padding-top:1%; padding-bottom:1%" value="Contraseña:">
-                      <div class="lineas" style="top:63%"></div>
+                      <input id="mod_contrasena" name="mod_contrasena" type="text" class="textos" style="top:56%; padding-top:1%; padding-bottom:1%" value="Contraseña:">
+                      <div class="lineas" style="top:62%"></div>
                         
                   
                       
-                      <select id="mod_genero" name="mod_genero" class="textos" style="top:65%; width:26%; padding-top:1%; padding-bottom:1%">
+                      <select id="mod_genero" name="mod_genero" class="textos" style="top:64%; width:26%; padding-top:1%; padding-bottom:1%">
                             <option>Hombre</option>
                             <option>Mujer</option>
                       </select> 
                       
-                      <div class="lineas" style="top:70%; width:26%"></div>
+                      <div class="lineas" style="top:69%; width:26%"></div>
      
-                      <select id="mod_nacimiento" name="mod_nacimiento" class="textos" style="top:65%; left:47%; width:38%; padding-top:1%; padding-bottom:1%">
+                      <select id="mod_nacimiento" name="mod_nacimiento" class="textos" style="top:64%; left:47%; width:38%; padding-top:1%; padding-bottom:1%">
                             <option>Año Nacimiento</option>
                             <option>2010</option>
                             <option>2009</option>
@@ -796,7 +796,7 @@
                             <option>1931</option>
                             <option>1930</option>
                       </select>
-                      <div class="lineas" style="top:70%; width:38%; left:47%"></div>
+                      <div class="lineas" style="top:69%; width:38%; left:47%"></div>
                       
                       <input id="cc" name="cc" type="text" style="position:absolute; top:80%; display:none" value="0">
                       <input id="mod_RFC" name="mod_RFC" type="text" style="position:absolute; top:80%; display:none" value="0000000000000">
@@ -814,7 +814,7 @@
                       <input id="mod_Extranjero" name="mod_Extranjero" type="text" style="position:absolute; top:80%; display:none" value="0">
                       
                         
-					  <input type="submit" class="botones" style="position:absolute; border:none; top:77%; width:calc(70% + 4px); left:15%; height:7%; background:#8BC542; cursor:pointer; color:#FFFFFF;" value="Finalizar">
+					  <input type="submit" class="botones" style="position:absolute; border:none; top:76%; width:calc(70% + 4px); left:15%; height:7%; background:#8BC542; cursor:pointer; color:#FFFFFF;" value="Finalizar">
  
  					
  
@@ -881,10 +881,14 @@ $.ajax({
 	processData:false,        // To send DOMDocument or non processed data file it is set to false
 	success: function(data)   // A function to be called if request succeeds
 	{
-									$('#fotos').css('background', 'url(http://dogs-life.com.mx/sm/fotos/'+data+') no-repeat');
-									$('#fotos').css('background-size', 'cover');
-									$('#fotos').css('background-position', 'center');
+		
+									if(data != localStorage.getItem("foto")){
+										$('#fotos').css('background', 'url(http://dogs-life.com.mx/sm/fotos/'+data+') no-repeat');
+										$('#fotos').css('background-size', 'cover');
+										$('#fotos').css('background-position', 'center');
+									}
 									
+									localStorage.setItem("foto", data);
 									localStorage.setItem("nombre", mod_nombre);
 									localStorage.setItem("email", mod_email);
 									localStorage.setItem("contrasena", mod_contrasena);
@@ -949,12 +953,12 @@ $.ajax({
                      </script>
                      
                      
-                     <div id="aviso4" class="avisos" style="top:71%; width:100%; text-align:center; color:#E11D8D"></div>
+                     <div id="aviso4" class="avisos" style="top:70%; width:100%; text-align:center; color:#E11D8D"></div>
               
                      
                      
                      
-                      <div id="bt_cancelar2" style="position:absolute; top:84%; width:calc(70% + 4px); left:15%; height:7%; background:#E11D8D">
+                      <div id="bt_cancelar2" style="position:absolute; top:83%; width:calc(70% + 4px); left:15%; height:7%; background:#E11D8D">
                       	  <div class="botones" style="color:#FFFFFF; top:50%">Cancelar</div>
                       </div>
                       
@@ -1296,20 +1300,16 @@ $.ajax({
 			document.getElementById("mod_IEPS").value = dec
 			document.getElementById("mod_Extranjero").value = ext
 			
-							if(dec==0){
+							if(dec==1){
 								$('#palomita3').show()
-								dec=1
 							}else{
 								$('#palomita3').hide()
-								dec=0
 							}
 							
-							if(ext==0){
+							if(ext==1){
 								$('#palomita4').show()
-								ext=1
 							}else{
 								$('#palomita4').hide()
-								ext=0
 							}
 							
 							
@@ -1318,6 +1318,137 @@ $.ajax({
 			return false;
         }); 
                       </script>
+                </div>
+                
+                
+                
+                
+                
+                
+                <div id="login" class="contenido" style="visibility:hidden; z-index:1001">
+                 	  <div style="position:absolute; width:100%; height:112%; background-color:#ffffff"></div>
+                  	  <div class="titulos" style="top:6%;">Login</div>
+                      
+                      
+                      <form name="forma_login" id="forma_login" method="post" action="http://dogs-life.com.mx/sm/login.php">
+                      
+                        
+                      <input id="log_email" name="log_email" type="text" class="textos" style="top:23%; padding-top:1%; padding-bottom:1%" value="Email:" onFocus="borrar2l()" onBlur="checar2l()" tabindex="2">
+                      <div class="lineas" style="top:30%"></div>
+                        
+                      <input id="log_contrasena" name="log_contrasena" type="text" class="textos" style="top:33%; padding-top:1%; padding-bottom:1%" value="Contraseña:" onFocus="borrar3l()" onBlur="checar3l()" tabindex="3">
+                      <div class="lineas" style="top:40%"></div>
+                        
+                      
+                      
+                      <script>
+                      	
+						
+						function borrar2l(){
+							if(document.getElementById('log_email').value=='Email:'){
+								document.getElementById('log_email').value=''
+							}
+						}
+				
+						function checar2l(){
+							if(document.getElementById('log_email').value==''){
+								document.getElementById('log_email').value='Email:'
+							}
+							StatusBar.hide(); 
+						}
+						
+						function borrar3l(){
+							if(document.getElementById('log_contrasena').value=='Contraseña:'){
+								$('#log_contrasena').attr('type', 'password');
+								document.getElementById('log_contrasena').value=''
+								document.getElementById('log_contrasena').focus()
+							}
+						}
+				
+						function checar3l(){
+							if(document.getElementById('log_contrasena').value==''){
+								$('#log_contrasena').attr('type', 'text');
+								document.getElementById('log_contrasena').value='Contraseña:'
+							}
+							StatusBar.hide(); 
+						}
+                      </script>
+                      
+ 
+                      
+                      
+                      
+                      
+                  
+                      
+                      <input id="login_continuar" class="botones" type="submit" style="position:absolute; top:53%; width:calc(70% + 4px); left:15%; height:8%; background:#8BC542; cursor:pointer; border:none; color:#fff" value="Continuar">
+                      
+                      
+                      
+                      <div id="login_face" style="position:absolute; top:61%; width:71%; left:15%; height:8%; background:#35518D; background-image:url(img/face.png); background-repeat:no-repeat; background-size:auto 60%; background-position:15px 40%; cursor:pointer">
+                      	  <div class="botones" style="color:#FFFFFF; top:50%">Inicar Sesión con Facebook</div>
+                      </div>
+                      
+                      <div id="bt_registo" class="avisos" style="top:72%; width:100%; text-align:center; cursor:pointer">¿No tienes una cuenta? <span style="color:#E11D8D">Registrate</span></div>
+                      
+                      <div id="aviso5" class="avisos" style="top:46%; width:100%; text-align:center; color:#E11D8D"></div>
+                      
+                      <div id="bt_cancelar3" style="position:absolute; top:87%; width:70%; left:15%; height:8%; background:#E11D8D">
+                      	  <div class="botones" style="color:#FFFFFF; top:50%">Cancelar</div>
+                      </div>
+                      
+                  </form> 
+                  
+                  <script>		  
+         $('#forma_login').submit(function() {
+	
+			var email = document.getElementById("log_email").value
+			var contrasena = document.getElementById("log_contrasena").value
+	
+			var filtro = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;	
+			if (!filtro.test(email)) {
+				$('#aviso5').html('* email incorrecto')
+				setTimeout("$('#aviso5').html('')", 1500)
+			   return false;
+			}
+	
+			if(document.getElementById("log_contrasena").value == 'Contraseña:' || document.getElementById("log_contrasena").value == ''){
+				$('#aviso5').html('* Contraseña incorrecta')
+				setTimeout("$('#aviso5').html('')", 1500)
+				return false;
+			}
+			
+			if($("#log_contrasena").val().length < 8){
+				$('#aviso5').html('* Contraseña debe tener mas de 8 caracteres')
+				setTimeout("$('#aviso5').html('')", 1500)
+				return false;
+			}
+			
+			
+			$('#aviso5').html('* Espera un momento')
+			
+			$.ajax({			
+					type: 'POST',
+					url: $(this).attr('action'),
+					data: $(this).serialize(),
+					success: function(data) {
+									$('#aviso5').html('')
+									
+									alert(data)
+									//localStorage.setItem("codigo", data);
+									//$('#clave').css('visibility','visible')
+									//$('#clave').transition({left:'130%', rotate: '20deg'}, 0)
+									//$('#clave').animate({left:'0%', rotate: '0deg'}, 1000)
+									//$('.contenido').css('z-index','0')
+									//$('#registro').css('z-index','1')
+									//$('#clave').css('z-index','2')
+									//$('#enviar_codigo').load('http://dogs-life.com.mx/sm/enviar_correo.php?codigo='+data+'&email='+email) 
+					}
+			})
+			return false;
+        }); 
+		
+                  </script>
                 </div>
                 
                 
@@ -1497,6 +1628,18 @@ $.ajax({
 									palo=0
 								}
 				})
+				
+				$('#bt_logueate').click(function(){
+									$('#login').css('visibility','visible')
+									$('#login').transition({left:'130%', rotate: '20deg'}, 0)
+									$('#login').css('z-index','2001')
+									$('#login').transition({left:'0%', rotate: '0deg'}, 1000)
+	
+				})
+				
+				
+				
+				
 				
 				
 				$('#bt2').click(function(){
