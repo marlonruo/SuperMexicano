@@ -35,14 +35,6 @@
         <script src="js/touch.js" type="text/javascript"></script>
         <script src="js/swipe.js" type="text/javascript"></script>
         <script type="text/javascript" src="js/jquery.form.js"></script>
-        
-        <script src="js/JsBarcode.js"></script>
-		<script>
-            Number.prototype.zeroPadding = function(){
-                var ret = "" + this.valueOf();
-                return ret.length == 1 ? "0" + ret : ret;
-            };
-        </script>
 
 
         <title>Super Mexicano</title>
@@ -475,13 +467,6 @@
                   <div class="titulos" style="top:6%;">Código de Cliente</div>
                       
                   <img src="img/codigo.png" class="centrar_h" style="height:35%; top:20%"/>
-                  
-                  <div class="centrar_h" style="height:35%; top:20%; color:#424242">
-                    <img id="barcode1" style="height:100%;"/>
-                    <script>JsBarcode("#barcode1", "Marlon Ruiz");</script>
-                  </div>
-                  
-                  
 				<div class="avisos2" style="top:62%; width:64%; left:18%; text-align:justify">Lorem ipsum dolor sit amet, sed diamconse te
   tuer adipiscing elit, sed diam nonummy nibh sed diameuismod tincidunt.</div>
   
@@ -1467,20 +1452,19 @@ $.ajax({
 									document.getElementById('mod_genero').value = datos[6];
 									document.getElementById('mod_nacimiento').value = datos[5];
 								
-									alert(datos3)
-									document.getElementById("rfc_RFC").value = datos[3];
-									document.getElementById("rfc_Rfactura").value = datos[7];
-									document.getElementById("rfc_Calle").value = datos[8];
-									document.getElementById("rfc_NumE").value = datos[9];
-									document.getElementById("rfc_NumI").value = datos[10];
-									document.getElementById("rfc_ColCli").value = datos[11];
-									document.getElementById("rfc_DelCli").value = datos[12];
-									document.getElementById("rfc_CiuCli").value = datos[13];
-									document.getElementById("rfc_EdoCli").value = datos[14];
-									document.getElementById("rfc_PaisCli").value = datos[15];
-									document.getElementById("rfc_CPCli").value = datos[16];
-									document.getElementById("rfc_IEPS").value = datos[17];
-									document.getElementById("rfc_Extranjero").value = datos[18];
+									document.getElementById("RFC").value = datos[3];
+									document.getElementById("Rfactura").value = datos[7];
+									document.getElementById("Calle").value = datos[8];
+									document.getElementById("NumE").value = datos[9];
+									document.getElementById("NumI").value = datos[10];
+									document.getElementById("ColCli").value = datos[11];
+									document.getElementById("DelCli").value = datos[12];
+									document.getElementById("CiuCli").value = datos[13];
+									document.getElementById("EdoCli").value = datos[14];
+									document.getElementById("PaisCli").value = datos[15];
+									document.getElementById("CPCli").value = datos[16];
+									document.getElementById("IEPS").value = datos[17];
+									document.getElementById("Extranjero").value = datos[18];
 									
 									
 									$('#aviso5').html('')
