@@ -457,7 +457,6 @@
 				//$('#bt_atras').fadeIn()
 				$('#bt_alerta').fadeIn()
 				$('#bt_alerta').css('right', '3%')
-				JsBarcode("#barcode1", clave2);
 			}else{
 				$('#aviso3').html('* clave incorrecta')
 				setTimeout("$('#aviso3').html('')", 1500)
@@ -472,17 +471,18 @@
                 </div>
                 
                 
-                <div id="codigo" class="contenido" style="visibility:hidden">
+                <div id="codigo" class="contenido" style="visibility:hidden1">
                   <div class="titulos" style="top:6%;">Código de Cliente</div>
                       
+                  <img src="img/codigo.png" class="centrar_h" style="height:35%; top:20%"/>
                   
-                  <div class="centrar_h" style="height:35%; top:20%;">
-                    <img id="barcode1" style="height:100%;"/>
-                    <script>JsBarcode("#barcode1", "Marlon Ruiz");</script>
-                  </div>
+                      <div class="centrar_h" style="height:35%; top:20%; color:#424242">
+                        <img id="barcode1" style="height:100%;"/>
+                        <script>JsBarcode("#barcode1", "Marlon Ruiz");</script>
+                      </div>
                   
                   
-				<div class="avisos2" style="top:62%; width:64%; left:18%; text-align:justify">Lorem ipsum dolor sit amet, sed diamconse te
+					<div class="avisos2" style="top:62%; width:64%; left:18%; text-align:justify">Lorem ipsum dolor sit amet, sed diamconse te
   tuer adipiscing elit, sed diam nonummy nibh sed diameuismod tincidunt.</div>
   
   					<div class="gris" style="height:2.5%; top:84%;"></div>
@@ -829,7 +829,7 @@
                       <input id="mod_Extranjero" name="mod_Extranjero" type="text" style="position:absolute; top:80%; display:none" value="0">
                       
                         
-					  <input id="en1" type="submit" class="botones" style="position:absolute; border:none; top:76%; width:calc(70% + 4px); left:15%; height:7%; background:#8BC542; cursor:pointer; color:#FFFFFF;" value="Finalizar">
+					  <input type="submit" class="botones" style="position:absolute; border:none; top:76%; width:calc(70% + 4px); left:15%; height:7%; background:#8BC542; cursor:pointer; color:#FFFFFF;" value="Finalizar">
  
  					
  
@@ -886,7 +886,6 @@
 				return false;
 			}
 			reg2=1
-			 
 			
 $.ajax({
 	url: "http://dogs-life.com.mx/sm/modificar.php", // Url to which the request is send
