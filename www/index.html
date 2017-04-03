@@ -475,7 +475,6 @@
                 <div id="codigo" class="contenido" style="visibility:hidden">
                   <div class="titulos" style="top:6%;">Código de Cliente</div>
                       
-                  <img src="img/codigo.png" class="centrar_h" style="height:35%; top:20%"/>
                   
                   <div class="centrar_h" style="height:35%; top:20%;">
                     <img id="barcode1" style="height:100%;"/>
@@ -688,7 +687,7 @@
                     <form name="forma_modifica" id="forma_modifica" method="post" action="" enctype="multipart/form-data">
                       
                       <div  style="position:absolute; width:30%; left:15%; top:19%; background:#8BC542; height:22%;">
-                      		<div id="fotos" style="position:absolute; width:100%; height:100%; background:rgba(199,21,24,1.00); background:url(../../../Documents/chopo/imagenes/docs.png) no-repeat; background-size:cover; background-position:center"></div>
+                      		<div id="fotos" style="position:absolute; width:100%; height:100%; background-size:cover; background-position:center"></div>
                       		<img src="img/foto.png" class="centrar" style="height:35%; margin-top:-5%"/>
                             <div id="fotito" class="avisos" style="width:100%; height:20px; overflow:hidden; top:70%; text-align:center; color:rgba(255,255,255,1.00)">Sube tu foto</div>
                    			<input id="foto" name="foto" type="file" accept="image/*" style="width:100%; height:100%; opacity:0.0;">
@@ -830,7 +829,7 @@
                       <input id="mod_Extranjero" name="mod_Extranjero" type="text" style="position:absolute; top:80%; display:none" value="0">
                       
                         
-					  <input type="submit" class="botones" style="position:absolute; border:none; top:76%; width:calc(70% + 4px); left:15%; height:7%; background:#8BC542; cursor:pointer; color:#FFFFFF;" value="Finalizar">
+					  <input id="en1" type="submit" class="botones" style="position:absolute; border:none; top:76%; width:calc(70% + 4px); left:15%; height:7%; background:#8BC542; cursor:pointer; color:#FFFFFF;" value="Finalizar">
  
  					
  
@@ -887,6 +886,7 @@
 				return false;
 			}
 			reg2=1
+			$('#en1').prop( "disabled", true );
 			
 $.ajax({
 	url: "http://dogs-life.com.mx/sm/modificar.php", // Url to which the request is send
@@ -904,6 +904,7 @@ $.ajax({
 										$('#fotos').css('background-position', 'center');
 									}
 									
+									$('#en1').prop( "disabled", false);
 									localStorage.setItem("foto", data);
 									localStorage.setItem("nombre", mod_nombre);
 									localStorage.setItem("email", mod_email);
@@ -1461,6 +1462,7 @@ $.ajax({
 									
 									
 									document.getElementById('cc').value = datos[0];
+									JsBarcode("#barcode1", datos[0]);
 									document.getElementById('mod_nombre').value = datos[1];
 									
 									document.getElementById('mod_email').value = datos[4];
@@ -1468,7 +1470,6 @@ $.ajax({
 									document.getElementById('mod_genero').value = datos[6];
 									document.getElementById('mod_nacimiento').value = datos[5];
 								
-									alert(datos3)
 									document.getElementById("rfc_RFC").value = datos[3];
 									document.getElementById("rfc_Rfactura").value = datos[7];
 									document.getElementById("rfc_Calle").value = datos[8];
@@ -1482,6 +1483,30 @@ $.ajax({
 									document.getElementById("rfc_CPCli").value = datos[16];
 									document.getElementById("rfc_IEPS").value = datos[17];
 									document.getElementById("rfc_Extranjero").value = datos[18];
+									
+									
+									
+									localStorage.setItem("codigo", datos[0]);
+									localStorage.setItem("nombre", datos[1]);
+									localStorage.setItem("email", datos[4]);
+									localStorage.setItem("contrasena", document.getElementById("log_contrasena").value);
+									localStorage.setItem("genero", datos[6]);
+									localStorage.setItem("anio", datos[5]);
+									
+									localStorage.setItem("RFC", datos[3]);
+									localStorage.setItem("Rfactura", datos[7]);
+									localStorage.setItem("Calle", datos[8]);
+									localStorage.setItem("NumE", datos[9]);
+									localStorage.setItem("NumI", datos[10]);
+									localStorage.setItem("ColCli", datos[11]);
+									localStorage.setItem("DelCli", datos[12]);
+									localStorage.setItem("CiuCli", datos[13]);
+									localStorage.setItem("EdoCli", datos[14]);
+									localStorage.setItem("PaisCli", datos[15]);
+									localStorage.setItem("CPCli", datos[16]);
+									localStorage.setItem("IEPS", datos[17]);
+									localStorage.setItem("Extranjero", datos[18]);
+									
 									
 									
 									$('#aviso5').html('')
@@ -1584,6 +1609,8 @@ $.ajax({
 				$('#claves').css('font-size', height/30+'px')
 	  	}
 		
+
+		var pollo = localStorage.getItem("codigo")
 		setTimeout('pasa_intro()', 3000)
 				
 				function pasa_intro(){
@@ -1592,10 +1619,48 @@ $.ajax({
 					$('#todo').animate({left:'100%'}, 0)
 					$('#todo').animate({left:'0%'}, 1000)
 					
-					//$('#perfil').css('visibility', 'visible')
-					//$('#perfil').animate({left:'100%'}, 0)
-					//$('#perfil').animate({left:'0%'}, 1000)
+					if(pollo!=""){
+					JsBarcode("#barcode1", pollo);
+					$('#codigo').css('visibility', 'visible')
+					$('#codigo').animate({left:'0%'}, 0)
 					
+									$('.contenido').css('z-index','0')
+									$('#login').css('z-index','1')
+									$('#codigo').css('z-index','2')
+									$('#bt_menu').fadeIn()
+									//$('#bt_atras').fadeIn()
+									$('#bt_alerta').fadeIn()
+									$('#bt_alerta').css('right', '3%')
+									
+									
+									if(localStorage.getItem("foto") != ""){
+										$('#fotos').css('background', 'url(http://dogs-life.com.mx/sm/fotos/'+localStorage.getItem("foto")+') no-repeat');
+										$('#fotos').css('background-size', 'cover');
+										$('#fotos').css('background-position', 'center');
+									}
+									
+									document.getElementById('mod_nombre').value = localStorage.getItem("nombre");
+									document.getElementById('mod_email').value = localStorage.getItem("email");
+									document.getElementById('mod_contrasena').value = localStorage.getItem("contrasena");
+									document.getElementById('mod_genero').value = localStorage.getItem("genero");
+									document.getElementById('mod_nacimiento').value = localStorage.getItem("anio");
+									document.getElementById("rfc_RFC").value = localStorage.getItem("RFC");
+									document.getElementById("rfc_Rfactura").value = localStorage.getItem("Rfactura");
+									document.getElementById("rfc_Calle").value = localStorage.getItem("Calle");
+									document.getElementById("rfc_NumE").value = localStorage.getItem("NumE");
+									document.getElementById("rfc_NumI").value = localStorage.getItem("NumI");
+									document.getElementById("rfc_ColCli").value = localStorage.getItem("ColCli");
+									document.getElementById("rfc_DelCli").value = localStorage.getItem("DelCli");
+									document.getElementById("rfc_CiuCli").value = localStorage.getItem("CiuCli");
+									document.getElementById("rfc_EdoCli").value = localStorage.getItem("EdoCli");
+									document.getElementById("rfc_PaisCli").value = localStorage.getItem("PaisCli");
+									document.getElementById("rfc_CPCli").value = localStorage.getItem("CPCli");
+									document.getElementById("rfc_IEPS").value = localStorage.getItem("IEPS");
+									document.getElementById("rfc_Extranjero").value = localStorage.getItem("Extranjero");
+									
+									
+					
+					}
 					
 					$('#portada').delay(1000).fadeOut(0)
 					StatusBar.hide();
